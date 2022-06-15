@@ -1,22 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home/Home.jsx';
+import Home from './pages/Home.jsx';
 
-function App() {
-	// const [result, setResult] = useState('')
-
-	// async function handleClick() {
-	// 	try {
-	// 		const response = await fetch('/results');
-	// 		const data = await response.text()
-	// 		console.log(data)
-	// 		setResult(data)
-
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// }
-
+function App(props) {
 	return (
 		<Router>
 			<Routes>
