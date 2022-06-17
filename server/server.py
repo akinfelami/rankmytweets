@@ -7,7 +7,7 @@ import json
 
 load_dotenv()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../client/build', static_url_path='/')
 
 bearer_token = os.getenv('bearer_toekn_id')
 cosumer_key = os.getenv('consumer_key')
@@ -20,8 +20,23 @@ access_token_secret = os.getenv('access_token_secret')
 client = tweepy.Client(bearer_token)
 
 
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
+
+
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')
+
+
+@app.errorhandler(tweepy.errors.BadRequest)
+def handle_bad_request(e):
+    return 'Invalid Username! Refresh Page to try again'
+
+
 @app.route('/<username>')
-def index(username):
+def server(username):
     # Get the ID of the user
     user = client.get_user(username=username)
     user_id = user[0]['id']
@@ -48,4 +63,4 @@ def index(username):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 5000))

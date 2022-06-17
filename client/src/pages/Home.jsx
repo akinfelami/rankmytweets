@@ -23,7 +23,6 @@ function Home(props) {
 		try {
 			const response = await fetchData(`/${username}`);
 			setData(response);
-			console.log(response[0]);
 			setResult(true);
 		} catch (error) {
 			console.error(error);
