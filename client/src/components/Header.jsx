@@ -27,6 +27,7 @@ function Header(props) {
 						<a href='https://github.com/akinfelami/rankmytweets'>
 							{props.styledText}
 						</a>
+						<Typography sx={{ mt: 2 }}>{props.content}</Typography>
 					</Typography>
 				</Typography>
 			</ThemeProvider>
