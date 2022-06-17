@@ -1,2 +1,3 @@
 # rankmytweets
-A python bot that ranks users tweets based on likes retweets or replies. 
+
+A python bot that searches 100 of most recents tweets and returns the most liked.
