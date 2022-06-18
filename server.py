@@ -7,7 +7,7 @@ import json
 
 load_dotenv()
 
-app = Flask(__name__, static_folder='../client/build', static_url_path='/')
+app = Flask(__name__, static_folder='./build', static_url_path='/')
 
 bearer_token = os.getenv('bearer_toekn_id')
 cosumer_key = os.getenv('consumer_key')
