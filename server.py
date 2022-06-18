@@ -8,12 +8,7 @@ load_dotenv()
 
 app = Flask(__name__, static_folder='./build', static_url_path='/')
 
-bearer_token = os.getenv('bearer_toekn_id')
-cosumer_key = os.getenv('consumer_key')
-consumer_secret = os.getenv('consumer_secret')
-
-access_token = os.getenv('access_token')
-access_token_secret = os.getenv('access_token_secret')
+bearer_token = os.getenv('bearer_token_id')
 
 
 client = tweepy.Client(bearer_token)
@@ -21,6 +16,7 @@ client = tweepy.Client(bearer_token)
 
 @app.route('/')
 def index():
+    console.log(bearer_token)
     return app.send_static_file('index.html')
 
 

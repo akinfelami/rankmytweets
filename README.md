@@ -2,19 +2,25 @@
 
 A python bot that searches 100 of a user's most recents tweets and returns the most liked. Frontend built with React and Backend with Flask using the tweepy module
 
+## You have to use your own bearer token id to authenticate the app.
+
 ## How to run
 
 ###### install packages
 
 ```
-npm install 
+npm install
 pip install -r requirements.txt
+npm run build
 ```
+
 ###### run app
+
 ```
 python server.py
 ```
-Visit ```http://localhost:5000/``` in your browser to see the app. 
+
+Visit `http://localhost:5000/` in your browser to see the app.
 
 ## Screenshot from app
 
