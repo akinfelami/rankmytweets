@@ -1,5 +1,4 @@
 import os
-from urllib import response
 from flask import Flask
 from dotenv import load_dotenv
 import tweepy
