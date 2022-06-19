@@ -12,7 +12,6 @@ const Forms = (props) => {
 	const handleUsername = (e) => {
 		e.preventDefault();
 		const result = e.target.value;
-		console.log(result);
 		props.name(result);
 	};
 

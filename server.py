@@ -16,7 +16,6 @@ client = tweepy.Client(bearer_token)
 
 @app.route('/')
 def index():
-    console.log(bearer_token)
     return app.send_static_file('index.html')
 
 
